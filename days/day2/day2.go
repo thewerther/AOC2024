@@ -168,6 +168,7 @@ func part2() int {
 
 	return safeLevelsCount
 }
+
 func main() {
 	part1()
 	part2()
