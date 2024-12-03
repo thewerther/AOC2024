@@ -32,10 +32,10 @@ func part2() int {
 	file, _ := os.Open("input.txt")
 	defer file.Close()
 
-  scanner := bufio.NewScanner(file)
-  instructionRe := regexp.MustCompile(`mul\(\d{1,3},\d{1,3}\)|do\(\)|don't\(\)`)
+	scanner := bufio.NewScanner(file)
+	instructionRe := regexp.MustCompile(`mul\(\d{1,3},\d{1,3}\)|do\(\)|don't\(\)`)
 	stock := 0
-  nextDisabled := false
+	nextDisabled := false
 	for scanner.Scan() {
 		line := scanner.Text()
 		instructions := instructionRe.FindAllString(line, -1)
@@ -47,10 +47,10 @@ func part2() int {
 				nextDisabled = false
 				continue
 			} else if nextDisabled == false {
-        var num1, num2 int
-        fmt.Sscanf(instruction, "mul(%d,%d)", &num1, &num2)
-        stock += num1 * num2
-      }
+				var num1, num2 int
+				fmt.Sscanf(instruction, "mul(%d,%d)", &num1, &num2)
+				stock += num1 * num2
+			}
 		}
 	}
 
