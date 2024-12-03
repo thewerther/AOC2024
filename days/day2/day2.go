@@ -51,7 +51,7 @@ func firstLevelUnsafe(report []int) bool {
 		return true
 	}
 
-  return false
+	return false
 }
 
 func checkForSafeReportPart2(report []int, corrected bool) bool {
